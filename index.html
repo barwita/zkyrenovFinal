@@ -277,8 +277,8 @@ function mkpdf() {
 
   // NUMERO ET DATE
   doc.setFontSize(9);
-  doc.text('N°' + num, mL + W, 25, { align: 'right' });
-  doc.text('DATE : ' + date, mL + W, 30, { align: 'right' });
+  doc.text('N°' + num, mL + W, 30, { align: 'right' });
+  doc.text('DATE : ' + date, mL + W, 40, { align: 'right' });
 
   // IBAN / BIC en gris discret (setTextColor(100) = gris moyen)
   doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(100);
