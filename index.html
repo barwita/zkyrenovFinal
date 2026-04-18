@@ -263,7 +263,10 @@ function mkpdf() {
   const T    = tot();
 
   const W = 186, mL = 12, dW = W * .72, mW = W * .28, rH = 7;
-
+  
+  function fmt(n) {
+  return parseFloat(n).toFixed(2).replace('.', ',') + ' €';
+  }
   // LOGO : lu depuis l image cachee dans le HTML
   // .src contient deja "data:image/png;base64,..." - format direct pour jsPDF
   try {
@@ -320,7 +323,7 @@ function mkpdf() {
     doc.rect(mL, y, dW, rH); doc.rect(mL + dW, y, mW, rH);
     doc.text('  ' + ta, mL + 2, y + 4.8, { maxWidth: dW - 4 });
     if (pr > 0) doc.text(
-      pr.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + ' €',
+      fmt(pr),
       mL + dW + mW - 2, y + 4.8, { align: 'right' }
     );
     y += rH;
@@ -340,7 +343,7 @@ function mkpdf() {
   doc.rect(mL, y, dW, rH, 'FD'); doc.rect(mL + dW, y, mW, rH, 'FD');
   doc.setLineWidth(0.3);
   doc.text('  TOTAL TTC', mL + 2, y + 4.8);
-  doc.text(T.toLocaleString('fr-FR', { minimumFractionDigits: 2 }) + ' €',
+  doc.text(fmt(T),
     mL + dW + mW - 2, y + 4.8, { align: 'right' });
   y += rH + 6;
 
