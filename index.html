@@ -277,7 +277,7 @@ function mkpdf() {
 
   // NUMERO ET DATE
   doc.setFontSize(11); doc.setFont('helvetica', 'bold');
-  doc.text('N° ' + '2021111' + num, mL + W, 30, { align: 'right' });
+  doc.text('N° :' + '2021111' + num, mL + W, 30, { align: 'right' });
   doc.text('DATE : ' + date, mL + W, 38, { align: 'right' });
 
   // IBAN / BIC en gris discret (setTextColor(100) = gris moyen)
