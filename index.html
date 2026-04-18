@@ -209,7 +209,7 @@ window.onload = () => {
 function tot() {
   let s = 0;
   for (let i = 1; i <= 9; i++) {
-    s += parseInteger(document.getElementById('p' + i).value) || 0;
+    s += parseFloat(document.getElementById('p' + i).value) || 0;
   }
   return s;
 }
@@ -316,7 +316,7 @@ function mkpdf() {
   let nf = 0;
   for (let i = 1; i <= 9; i++) {
     const ta = document.getElementById('t' + i).value.trim();
-    const pr = parseInteger(document.getElementById('p' + i).value) || 0;
+    const pr = parseFloat(document.getElementById('p' + i).value) || 0;
     if (!ta && pr === 0) continue;
     nf++;
     doc.setDrawColor(180);
